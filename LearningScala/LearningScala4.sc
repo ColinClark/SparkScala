@@ -8,7 +8,6 @@ object LearningScala4 {
   
   val captainStuff = ("Picard", "Enterprise-D", "NCC-1701-D")
                                                   //> captainStuff  : (String, String, String) = (Picard,Enterprise-D,NCC-1701-D)
-                                                  //| 
   println(captainStuff)                           //> (Picard,Enterprise-D,NCC-1701-D)
   
   // You refer to individual fields with their ONE-BASED index:
@@ -112,4 +111,18 @@ println(archersShip)                              //> Unknown
 // And we didn't even touch on object-oriented Scala. The book "Learning Scala" from O'Reilly is great if you want to
 // go into more depth - but you've got enough to get through this course for now.
 
+val myList = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
+                                                  //> myList  : List[Int] = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1
+                                                  //| 5, 16, 17, 18, 19, 20)
+
+val divisible = myList.filter( (x: Int) => x % 3 == 0)
+                                                  //> divisible  : List[Int] = List(3, 6, 9, 12, 15, 18)
+
+val shortHand = myList.filter(_ % 3 == 0)         //> shortHand  : List[Int] = List(3, 6, 9, 12, 15, 18)
+
+val myMultMap = myList.map(_ * 2)                 //> myMultMap  : List[Int] = List(2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 2
+                                                  //| 6, 28, 30, 32, 34, 36, 38, 40)
+
+val myTotal = myMultMap.reduce((x: Int, y: Int) => x + y)
+                                                  //> myTotal  : Int = 420
 }
