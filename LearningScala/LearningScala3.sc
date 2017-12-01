@@ -9,9 +9,9 @@ object LearningScala3 {
   
   def cubeIt(x: Int): Int = {x * x * x}           //> cubeIt: (x: Int)Int
   
-  println(squareIt(2))                            //> 4
+  println(squareIt(3))                            //> 9
   
-  println(cubeIt(2))                              //> 8
+  println(cubeIt(4))                              //> 64
   
   // Functions can take other functions as parameters
   
@@ -37,5 +37,18 @@ object LearningScala3 {
   // Strings have a built-in .toUpperCase method. For example, "foo".toUpperCase gives you back FOO.
   // Write a function that converts a string to upper-case, and use that function of a few test strings.
   // Then, do the same thing using a function literal instead of a separate, named function.
+  
+  def myToUpper( lowerCase: String) : String = {lowerCase.toUpperCase}
+                                                  //> myToUpper: (lowerCase: String)String
+  
+  val upperCase = myToUpper("colin p clark")      //> upperCase  : String = COLIN P CLARK
+  
+  def transformString( aString: String, f: String => String) : String = {
+ 	 	f(aString)
+  	}                                         //> transformString: (aString: String, f: String => String)String
+  	
+  
+  val literalUpperCase = transformString("colin p clark", newString => newString.toUpperCase)
+                                                  //> literalUpperCase  : String = COLIN P CLARK
   
 }
