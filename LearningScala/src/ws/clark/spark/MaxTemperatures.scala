@@ -1,4 +1,4 @@
-package com.sundogsoftware.spark
+package ws.clark.spark
 
 import org.apache.spark._
 import org.apache.spark.SparkContext._
@@ -19,7 +19,7 @@ object MaxTemperatures {
   def main(args: Array[String]) {
    
     // Set the log level to only print errors
-    Logger.getLogger("org").setLevel(Level.ERROR)
+    Logger.getLogger("org").setLevel(Level.INFO)
     
     // Create a SparkContext using every core of the local machine
     val sc = new SparkContext("local[*]", "MaxTemperatures")
@@ -36,7 +36,6 @@ object MaxTemperatures {
        val temp = result._2
        val formattedTemp = f"$temp%.2f F"
        println(s"$station max temperature: $formattedTemp") 
-    }
-      
+    }   
   }
 }
