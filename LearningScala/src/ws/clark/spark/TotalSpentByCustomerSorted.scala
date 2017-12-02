@@ -24,12 +24,8 @@ object TotalSpentByCustomerSorted {
     
     val totalByCustomer = mappedInput.reduceByKey( (x,y) => x + y )
     
-    val flipped = totalByCustomer.map( x => (x._2, x._1) )
-    
-    val totalByCustomerSorted = flipped.sortByKey()
-    
-    val results = totalByCustomerSorted.collect()
-    
+    val results = totalByCustomer.map( x => (x._2, x._1) ).sortByKey().collect()
+            
     results.foreach(println)
   }
   
