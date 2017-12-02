@@ -1,22 +1,22 @@
 object LearningScala1 {
   // VALUES are immutable constants. You can't change them once defined.
-  val hello: String = "Hi!!"                      //> hello  : String = Hi!!
-  println(hello)                                  //> Hi!!
+  val hello: String = "Hola!"                     //> hello  : String = Hola!
+  println(hello)                                  //> Hola!
   
   // Notice how Scala defines things backwards from other languages - you declare the
   // name, then the type.
   
   // VARIABLES are mutable
-  var helloThere: String = hello                  //> helloThere  : String = Hi!!
+  var helloThere: String = hello                  //> helloThere  : String = Hola!
   helloThere = hello + " There!"
-  println(helloThere)                             //> Hi!! There!
+  println(helloThere)                             //> Hola! There!
   
   
   // One key objective of functional programming is to use immutable objects as often as possible.
   // Try to use operations that transform immutable objects into a new immutable object.
   // For example, we could have done the same thing like this:
-  val immutableHelloThere = hello + "There!"      //> immutableHelloThere  : String = Hi!!There!
-  println(immutableHelloThere)                    //> Hi!!There!
+  val immutableHelloThere = hello + "There!"      //> immutableHelloThere  : String = Hola!There!
+  println(immutableHelloThere)                    //> Hola!There!
   
   // Some other types
   val numberOne : Int = 1                         //> numberOne  : Int = 1
@@ -48,6 +48,7 @@ object LearningScala1 {
   // Using regular expressions:
   val theUltimateAnswer: String = "To life, the universe, and everything is 42."
                                                   //> theUltimateAnswer  : String = To life, the universe, and everything is 42.
+                                                  //| 
   val pattern = """.* ([\d]+).*""".r              //> pattern  : scala.util.matching.Regex = .* ([\d]+).*
   val pattern(answerString) = theUltimateAnswer   //> answerString  : String = 42
   val answer = answerString.toInt                 //> answer  : Int = 42
@@ -68,7 +69,4 @@ object LearningScala1 {
   // three decimal places of precision to the right.
   // Just write your code below here; any time you save the file it will automatically display the results!
   
-  val myPi : Double = 3.14159265                  //> myPi  : Double = 3.14159265
-  val doubleMyPi = myPi * 2                       //> doubleMyPi  : Double = 6.2831853
-  println(f"Pi * 2 is about $doubleMyPi%.3f")     //> Pi * 2 is about 6.283
 }
