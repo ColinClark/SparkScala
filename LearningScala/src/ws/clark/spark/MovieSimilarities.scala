@@ -90,7 +90,7 @@ object MovieSimilarities {
   def main(args: Array[String]) {
     
     // Set the log level to only print errors
-    Logger.getLogger("org").setLevel(Level.ERROR)
+    Logger.getLogger("org").setLevel(Level.DEBUG)
     
      // Create a SparkContext using every core of the local machine
     val sc = new SparkContext("local[*]", "MovieSimilarities")
@@ -158,7 +158,7 @@ object MovieSimilarities {
         if (similarMovieID == movieID) {
           similarMovieID = pair._2
         }
-        println(nameDict(similarMovieID) + "\tscore: " + sim._1 + "\tstrength: " + sim._2)
+        println(nameDict(similarMovieID) + "\t\tscore: " + sim._1 + "\t\tstrength: " + sim._2)
       }
     }
   }
