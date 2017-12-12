@@ -2,7 +2,7 @@ object LearningScala2 {;import org.scalaide.worksheet.runtime.library.WorksheetS
   // Flow control
   
   // If / else syntax
-  if (1 > 3) println("Impossible!") else println("The world makes sense.");$skip(96); 
+  if (1 > 4) println("Impossible!") else println("The world makes sense.");$skip(96); 
   
   if (1 > 3) {
   	println("Impossible!")
